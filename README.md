@@ -29,11 +29,11 @@ In almost any other situation, you are just going to run into trouble.
 
 ### So, what units should we use?
 
-Any measurements that are based on the size of text, essentially. The main structural language of the web is Hyper_text_ Markup Language (HTML), and it is still the amount of text that mostly defines the size of a web page (flexbox, etc. notwithstanding).
+Any measurements that are based on the size of text, essentially. The main structural language of the web is Hyper _Text_ Markup Language (HTML), and it is still the amount of text that mostly defines the size of a web page (flexbox, etc. notwithstanding).
 
 Further, when designing Accessible sites, you must allow users to increase the text size of pages, and so sizing everything by text makes sense.
 
-All of which is a long-winded way of saying that we should use <code>em</code>s, <code>rem</code>s and other proportional units. And <code>vh</code> and <code>vw</code>s are shaping up to be particularly exciting.
+All of which is a long-winded way of saying that we should use <code>em</code>s, <code>rem</code>s and other proportional units. And <code>vh</code> and <code>vw</code> are shaping up to be particularly exciting.
 
 ### But this framework is a bit thin
 
