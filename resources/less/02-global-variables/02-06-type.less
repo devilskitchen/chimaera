@@ -1,0 +1,96 @@
+// Define the font paths
+@icon-font-path:"../fonts/";
+//@icon-font-name:"glyphicons-halflings-regular";
+
+// Import the fonts
+@font-face {
+  @icon-font-name:"glyphicons-halflings-regular";
+  font-family: 'Glyphicons Halflings';
+  src: url('@{icon-font-path}@{icon-font-name}.eot');
+  src: url('@{icon-font-path}@{icon-font-name}.eot?#iefix') format('embedded-opentype'),
+       url('@{icon-font-path}@{icon-font-name}.woff') format('woff'),
+       url('@{icon-font-path}@{icon-font-name}.ttf') format('truetype'),
+       url('@{icon-font-path}@{icon-font-name}.svg#glyphicons_halflingsregular') format('svg');
+}
+
+@font-face {
+  @icon-font-name:"fontawesome-webfont";
+  font-family: 'FontAwesome';
+  src:	url('@{icon-font-path}@{icon-font-name}.eot?v=4.0.3');
+  src:	url('@{icon-font-path}@{icon-font-name}.eot?#iefix&v=4.0.3') format('embedded-opentype'),
+  		url('@{icon-font-path}@{icon-font-name}.woff?v=4.0.3') format('woff'),
+  		url('@{icon-font-path}@{icon-font-name}.ttf?v=4.0.3') format('truetype'),
+  		url('@{icon-font-path}@{icon-font-name}.svg?v=4.0.3#fontawesomeregular') format('svg');
+}
+
+/*
+@font-face {
+  @icon-font-name:"fontawesome-webfont";
+  font-family: 'Glyphicons Halflings';
+  src: url('@{icon-font-path}@{icon-font-name}.eot');
+  src: url('@{icon-font-path}@{icon-font-name}.eot?#iefix') format('embedded-opentype'),
+       url('@{icon-font-path}@{icon-font-name}.woff') format('woff'),
+       url('@{icon-font-path}@{icon-font-name}.ttf') format('truetype'),
+       url('@{icon-font-path}@{icon-font-name}.svg#fontawesome-webfont') format('svg');
+}
+*/
+
+// Bundled with Bootstrap
+.glyphicon {
+	font-family:'Glyphicons Halflings';
+	font-style:normal;
+	font-weight:normal;
+	line-height:1;
+	-webkit-font-smoothing:antialiased;
+	-moz-osx-font-smoothing:grayscale;
+}
+
+// Font Awesome (better: more glyphs, more free-ness)
+.fonticon {
+	font-family:'FontAwesome';
+	font-style:normal;
+	font-weight:normal;
+	line-height:1;
+	-webkit-font-smoothing:antialiased;
+	-moz-osx-font-smoothing:grayscale;
+}
+
+// Display icons automatically
+[data-icon]:before {
+  //font-family: icons;
+  // BYO icon font, mapped smartly
+  content: attr(data-icon);
+  speak: none; // Not to be trusted, but hey.
+  margin-right:@space-px;
+  &:extend(.fonticon);
+}
+
+// Use this construct for stand-alone icons with text labels for Accessibility. Structure, e.g.
+/*<a href="#rss" class="icon-alone">
+  <span aria-hidden="true" data-icon="&#x25a8;"></span>
+  <span class="screen-reader-text">RSS</span>
+</a>*/
+// Prevents clickability issue in Webkit
+.icon-only {
+	display:block;
+	// Screen reader label
+	.screen-reader-text { /* Reusable, toolbox kind of class */
+	  position: absolute;
+	  top: -9999px;
+	  left: -9999px;
+	}
+}
+
+// Type families
+@font1:"Helvetica Neue", "Helvetica", sans-serif;
+
+@font-lt:200;
+@font-reg:400;
+@font-bld:700;
+@font-blk:900;
+
+
+@base-font-size:1.4em;
+@responsive-font-size:4vw;
+
+// Font icons

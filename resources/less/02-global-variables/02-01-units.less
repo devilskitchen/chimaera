@@ -1,0 +1,37 @@
+/*==== SPACING ELEMENTS ====*/
+@space-em:0.4em;
+@space-px:4px;
+
+// 1 vh/vw unit reflects 1/100th the width of the viewport.
+//To make an element the full width of the viewport, for example, you'd set it to width:100vw.
+// Ref: http://snook.ca/archives/html_and_css/vm-vh-units
+@vh-unit:4px;
+@vw-unit:4px;
+
+/*==== SITE WIDTHS ====*/
+@desktop-width:1200px;
+@mobile-width:320px;
+
+/*==== FONT UNITS ====*/
+@font-normal:400;
+@font-bold:700;
+
+/*==== POSITION ABSOLUTE ELEMENTS CENTRALLY ====*/
+.absolute-pos-center(@element-width:100%;@top-pos:0px;) {
+	position:absolute;
+	width:@element-width;
+	top:@top-pos;
+	left:50%;
+	margin-left:(-@element-width / 2);
+	opacity:1;
+}
+
+.hide-pos() {
+	position:absolute;
+	top:-99999px;
+	left:-99999px;
+	opacity:0;
+	.transition-attribute(opacity,0.25s,linear);
+}
+
+

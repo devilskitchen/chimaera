@@ -1,0 +1,50 @@
+/*==== THEME (keep the mixin names the same: just change the values if required) ====*/
+@np-bg-col:green;
+@np-bg-col-mobile:red;
+@np-width:800px;
+@np-width-mobile:340px;
+
+@um-width:20%;
+@um-width-mobile:300px;
+
+// Application header
+.app-head () {
+	//.bg-col(rgba(255,255,255,0.9));
+	border-bottom:4px solid @color1;
+	a {
+		#links > .light();
+	}
+	@media @mobile {
+		//.bg-col();
+		#links > .color(@color2);
+	}
+}
+
+.app-menu () {
+	//.grad-mono();
+	@media @mobile {
+		//.bg-col();
+	}
+}
+
+.app-footer () {
+	//.grad-mono();
+	@media @mobile {
+		//.bg-col();
+	}
+}
+
+// Notifications panel
+.user-option {
+	// Targets the user-notifications trigger
+	.notification-panel(@np-bg-col;@np-bg-col-mobile;);
+}
+
+.user-menu {
+	.user-menu-display();
+	#texture > .noise-bg(@color1;@white;);
+	@media @mobile {
+		#texture > .noise-bg(@color3;@white;);
+	}
+}
+

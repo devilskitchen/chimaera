@@ -1,0 +1,64 @@
+/*==== COLOURS (or colors) ====*/
+
+// Colour variables
+
+// Alter this variable to provide the base colour
+@base-h:278; // Purple
+
+// Number of colours displayed (variable number from 2 to 5)
+@color-number:5;
+
+// Standard spin: change this to alter the colour relationships
+@hue-spin:(360 / @color-number);
+
+// Or apply the spin manually
+//@hue-spin:80;
+// Base saturation (percentage used as an aide memoire)
+@base-s:percentage(0.75);
+// Base lightness (percentage used as an aide memoire)
+@base-l:percentage(0.25);
+// Base transparency (alpha)
+@base-a:1.0;
+
+// These are linked to the @base-* values specified above, but could be edited individually, e.g. @color1-l:lighten(@base-l, 20%);, or @color1-l:lighten(@base-l, percentage(0.2));
+@color1-h:@base-h;
+@color1-s:@base-s;
+@color1-l:@base-l;
+@color1-a:@base-a;
+
+@color2-h:(@base-h + (@hue-spin * 1));
+@color2-s:@base-s;
+@color2-l:(@base-l + 20);
+@color2-a:@base-a;
+
+//@color3-h:(@base-h + (@hue-spin * 2));
+@color3-h:80;
+@color3-s:(@base-s + 6);
+@color3-l:(@base-l + 14);
+@color3-a:@base-a;
+
+@color4-h:(@base-h + (@hue-spin * 3));
+@color4-s:(@base-s + 20);
+@color4-l:(@base-l + 2);
+@color4-a:@base-a;
+
+@color5-h:(@base-h + (@hue-spin * 4));
+@color5-s:@base-s;
+@color5-l:(@base-l + 20);
+@color5-a:@base-a;
+
+// Assorted Greys
+@text-color:#444444;
+@grey:#999999;
+@greys-increment:percentage(0.1);
+
+@lightest-grey:lighten(@lighter-grey,@greys-increment);
+@lighter-grey:lighten(@light-grey,@greys-increment);
+@light-grey:lighten(@grey,@greys-increment);
+@dark-grey:darken(@grey,@greys-increment);
+@darker-grey:darken(@dark-grey,@greys-increment);
+@darkest-grey:darken(@darker-grey,@greys-increment);
+@near-black:#111111;
+
+@black:hsla(0, 0%, 0%, 1.0);
+@white:hsla(0, 0%, 100%, 1.0);

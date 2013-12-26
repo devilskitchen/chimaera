@@ -1,0 +1,74 @@
+@charset "utf-8";
+
+// Guess2Give Mobile Styles, created by CJDM 04/11/2013
+
+/*-------- Set Up --------*/
+
+// Bootstrap and Library folder paths
+@framework-path: "bootstrap/";
+	@framework-img-path: "../img/framework/";
+@library-path: "101-libraries/";
+	@library-img-path: "../img/lib/";
+// Call images
+@image-url: "../img/";
+// Example: background-image: url("@{image-url}bg.png");
+
+/*---- Standard definitions: others are in 04-structure/01-page ----*/
+html {
+	font-size:62.5%; /*---- Makes 1em = 10px (assuming default browser font size of 16px) ----*/
+	height:100%;
+	padding:0;
+	margin:0;
+	} 
+  
+body {
+	min-height:100%;
+	padding:0;
+	margin:0;
+	overflow-x:hidden;
+	}
+
+/*======== IMPORT CSS LIBRARIES ========*/
+
+	
+/*======== IMPORT STYLES ========*/
+	
+	/*==== 01-Framework ====*/
+	@import "01-framework/01-01-normalise";
+	@import "01-framework/01-02-first-shim";
+	// 01-03-last-shim goes last to ensure that the helper classes are not over-ridden
+	@import "01-framework/01-04-toolbox";
+	@import "01-framework/01-05-media-breakpoints";
+		
+	/*==== 02-Global-Variables ====*/
+	@import "02-global-variables/02-01-units";
+	@import "02-global-variables/02-02-colours";
+	@import "02-global-variables/02-03-images";
+	@import "02-global-variables/02-04-links";
+	@import "02-global-variables/02-05-textures";
+	@import "02-global-variables/02-06-type";
+	
+	/*==== 03-Components ====*/
+	@import "03-components/03-01-buttons";
+	@import "03-components/03-02-tables";
+	@import "03-components/03-03-panels";
+	@import "03-components/03-04-report-pods";
+	@import "03-components/03-05-user-menu";
+	@import "03-components/03-06-notifications";
+	
+	/*==== 04-Structure ====*/
+	@import "04-structure/04-01-structure";
+	@import "04-structure/04-02-app-header";
+	
+	/*==== 05-Theme ====*/
+	@import "05-theme/05-01-theme";
+	@import "05-theme/05-02-print";
+	
+	/*==== 101-Libraries ====*/
+	@import "101-libraries/add2home";
+	@import "101-libraries/select2";
+
+	// Last shim goes last to ensure that the helper classes are not over-written
+	@import "01-framework/01-03-last-shim";
+	
+/*======== END STYLES ========*/

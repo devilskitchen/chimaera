@@ -1,0 +1,422 @@
+/*---- The LESS Toolbox contains all of the repeated styles and colour variables ----*/
+
+/*---- Border-box Model Reset ----*/
+
+/* Apply a natural box layout model to some elements */
+.box-sizing-reset () {
+	-moz-box-sizing:border-box;
+	-webkit-box-sizing:border-box;
+	box-sizing:border-box;
+	}
+
+/*---- Box model reset ----*/
+
+.box-model-reset () {
+	margin:0;
+	padding:0;
+	}
+
+.list-reset () {
+	margin:0;
+	padding:0;
+	list-style-type:none;
+	}
+	
+/*---- Align block elements centre ----*/
+
+.center-block () {
+	margin-left:auto;
+	margin-right:auto;
+	}
+	
+/*---- Provide a light grey outline for elements in White-Label Sandbox ----*/
+
+.light-border () {
+	border:1px solid #DDDDDD;
+	}
+	
+/*---- Standard Moble View reset: remove float, and set an automatic width; remove all margins ----*/
+.mobile-reset () {
+	float:none;
+	width:auto;
+	margin:0;
+}
+	
+/*---------------------------------------------------
+    LESS Elements 0.6: http://lesselements.com
+-----------------------------------------------------*/
+
+// Gradient mixin (brought up to date: CJDM 27/08/2012)
+.gradient (@color: #F5F5F5, @start: #EEE, @stop: #FFF) {
+	background: @color;
+	background: -moz-linear-gradient(top, @start 0%, @stop 100%); // FF3.6+
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, @start), color-stop(100%, @stop)); // Chrome,Safari4+
+	background: -webkit-linear-gradient(top, @start 0%, @stop 100%); // Chrome10+,Safari5.1+
+	background: -o-linear-gradient(top, @start 0%, @stop 100%); // Opera 11.10+
+	background: linear-gradient(to bottom, @start 0%, @stop 100%); // W3C
+	}
+	
+// Gradient left to right
+.gradient-left (@color: #F5F5F5, @start: #EEE, @stop: #FFF) {
+	background: @color;
+	background: -moz-linear-gradient(left, @start 0%, @stop 100%); // FF3.6+
+	background: -webkit-gradient(linear, left, right, color-stop(0%, @start), color-stop(100%, @stop)); // Chrome,Safari4+
+	background: -webkit-linear-gradient(left, @start 0%, @stop 100%); // Chrome10+,Safari5.1+
+	background: -o-linear-gradient(left, @start 0%, @stop 100%); // Opera 11.10+
+	background: linear-gradient(to right, @start 0%, @stop 100%); // W3C
+	}
+
+// Radial gradient mixin (brought up to date: CJDM 27/08/2012)
+.gradient-radial (@color: #F5F5F5, @start: #EEE, @stop: #FFF) {
+	background: @color;
+	background: -moz-radial-gradient(center, ellipse cover, @start 0%, @stop 100%); // FF3.6+
+	background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,@start), color-stop(100%,@stop)); // Chrome,Safari4+
+	background: -webkit-radial-gradient(center, ellipse cover, @start 0%,@stop 100%); // Chrome10+,Safari5.1+
+	background: -o-radial-gradient(center, ellipse cover, @start 0%,@stop 100%); // Opera 12+
+	background: radial-gradient(ellipse at center, @start 0%,@stop 100%); // W3C
+	}
+	
+// Gradient mixin (brought up to date: CJDM 27/08/2012)
+.gradient-plus-image ("@{image-url}", @img-repeat:repeat, @pos-x:left, @pos-y:top, @color: #F5F5F5, @start: #EEE, @stop: #FFF) {
+	background: @color url("@{image-url}") @img-repeat @pos-x @pos-y;
+	background: url("@{image-url}") @img-repeat @pos-x @pos-y,
+				-moz-linear-gradient(top, @start 0%, @stop 100%); // FF3.6+
+	background: url("@{image-url}") @img-repeat @pos-x @pos-y,
+				-webkit-gradient(linear, left top, left bottom, color-stop(0%, @start), color-stop(100%, @stop)); // Chrome,Safari4+
+	background: url("@{image-url}") @img-repeat @pos-x @pos-y,
+				-webkit-linear-gradient(top, @start 0%, @stop 100%); // Chrome10+,Safari5.1+
+	background: url("@{image-url}") @img-repeat @pos-x @pos-y,
+				-o-linear-gradient(top, @start 0%, @stop 100%); // Opera 11.10+
+	background: url("@{image-url}") @img-repeat @pos-x @pos-y,
+				linear-gradient(to bottom, @start 0%, @stop 100%); // W3C
+	}	
+	
+// Border shortcuts
+.bordered (@top-color: #EEE, @right-color: #EEE, @bottom-color: #EEE, @left-color: #EEE) {
+	border-top: solid 1px @top-color;
+	border-left: solid 1px @left-color;
+	border-right: solid 1px @right-color;
+	border-bottom: solid 1px @bottom-color;
+	}
+	
+// Text-shadow
+.text-shadow (@x-axis: 0, @y-axis: 1px, @blur:1px, @text-shadow-color: #FFF) {
+	-webkit-text-shadow: @x-axis @y-axis @blur @text-shadow-color;
+	-moz-text-shadow: @x-axis @y-axis @blur @text-shadow-color;
+	text-shadow: @x-axis @y-axis @blur @text-shadow-color;
+	}
+
+// Drop-shadow
+.box-shadow (@x-axis: 0, @y-axis: 1px, @blur: 2px, @alpha:0.5) {
+	-webkit-box-shadow: @x-axis @y-axis @blur rgba(0, 0, 0, @alpha);
+	-moz-box-shadow: @x-axis @y-axis @blur rgba(0, 0, 0, @alpha);
+	box-shadow: @x-axis @y-axis @blur rgba(0, 0, 0, @alpha);
+	}
+	
+// Drop-shadow with spread control
+.box-shadow-spread (@x-axis: 0, @y-axis: 1px, @blur: 2px, @spread:2px, @alpha:0.5) {
+	-webkit-box-shadow: @x-axis @y-axis @blur @spread rgba(0, 0, 0, @alpha);
+	-moz-box-shadow: @x-axis @y-axis @blur @spread rgba(0, 0, 0, @alpha);
+	box-shadow: @x-axis @y-axis @blur @spread rgba(0, 0, 0, @alpha);
+	}
+	
+// Drop-shadow
+.outer-glow (@x-axis: 0, @y-axis: 1px, @blur: 2px, @alpha:0.5) {
+	-webkit-box-shadow: @x-axis @y-axis @blur rgba(255, 255, 255, @alpha);
+	-moz-box-shadow: @x-axis @y-axis @blur rgba(255, 255, 255, @alpha);
+	box-shadow: @x-axis @y-axis @blur rgba(255, 255, 255, @alpha);
+	}
+	
+// Inset shadow
+.inner-shadow (@x-axis: 0, @y-axis: 1px, @blur: 2px, @alpha:0.5) {
+	-webkit-box-shadow: inset  @x-axis @y-axis @blur rgba(0, 0, 0, @alpha);
+  	-moz-box-shadow: inset  @x-axis @y-axis @blur rgba(0, 0, 0, @alpha);
+  	box-shadow: inset  @x-axis @y-axis @blur rgba(0, 0, 0, @alpha);
+	}
+	
+// Inset glow
+.inner-glow (@x-axis: 0, @y-axis: 1px, @blur: 2px, @alpha:0.5) {
+	-webkit-box-shadow: inset @x-axis @y-axis @blur rgba(255, 255, 255, @alpha);
+	-moz-box-shadow: inset @x-axis @y-axis @blur rgba(255, 255, 255, @alpha);
+	box-shadow: inset @x-axis @y-axis @blur rgba(255, 255, 255, @alpha);
+	}
+	
+// Two shadows
+.box-shadow-2 (@shadow1, @shadow2) {
+	-webkit-box-shadow: @shadow1, @shadow2;
+	-moz-box-shadow: @shadow1, @shadow2;
+	box-shadow: @shadow1, @shadow2;
+}
+
+// Three shadows
+.box-shadow-3 (@shadow1, @shadow2, @shadow3) {
+	-webkit-box-shadow: @shadow1, @shadow2, @shadow3;
+	-moz-box-shadow: @shadow1, @shadow2, @shadow3;
+	box-shadow: @shadow1, @shadow2, @shadow3;
+}
+
+// Four shadows
+.box-shadow-4 (@shadow1, @shadow2, @shadow3, @shadow4) {
+	-webkit-box-shadow: @shadow1, @shadow2, @shadow3, @shadow4;
+	-moz-box-shadow: @shadow1, @shadow2, @shadow3, @shadow4;
+	box-shadow: @shadow1, @shadow2, @shadow3, @shadow4;
+}
+	
+// Border-radius
+.border-radius (@radius: 4px) {
+	-webkit-border-radius: @radius;
+	-moz-border-radius: @radius;
+	border-radius: @radius;
+	-moz-background-clip: padding;
+	-webkit-background-clip: padding-box;
+	background-clip: padding-box;
+	// Apply IE fix
+	//behavior: url("../css-libs/PIE.htc");
+	//position:relative;
+	}
+	
+// Border-radius-single
+.border-radius-single (@topleft: 4px, @topright: 4px, @bottomright: 4px, @bottomleft: 4px) {
+	-webkit-border-top-right-radius: @topright;
+	-webkit-border-bottom-right-radius: @bottomright;
+	-webkit-border-bottom-left-radius: @bottomleft;
+	-webkit-border-top-left-radius: @topleft;
+	-moz-border-radius-topright: @topright;
+	-moz-border-radius-bottomright: @bottomright;
+	-moz-border-radius-bottomleft: @bottomleft;
+	-moz-border-radius-topleft: @topleft;
+	border-top-right-radius: @topright;
+	border-bottom-right-radius: @bottomright;
+	border-bottom-left-radius: @bottomleft;
+	border-top-left-radius: @topleft;
+	border-radius:@topleft @topright @bottomright @bottomleft;
+	-moz-background-clip: padding;
+	-webkit-background-clip: padding-box;
+	background-clip: padding-box; 
+	// Apply IE fix
+	//behavior: url("../css-libs/PIE.htc");
+	//position:relative;
+	}
+	
+// Border-radius
+.border-radius-reset (@radius:0) {
+	-webkit-border-radius: @radius;
+	-moz-border-radius: @radius;
+	border-radius: @radius;
+	//-pie-border-radius:none;
+	}
+	
+// Opacity
+.opacity(@opacity: 0.5) {
+	-moz-opacity: @opacity;
+	-khtml-opacity: @opacity;
+	-webkit-opacity: @opacity;
+	opacity: @opacity;
+	}
+	
+// Box-shadow
+.box-shadow-free(@arguments) {
+	-webkit-box-shadow: @arguments;
+	-moz-box-shadow: @arguments;
+	box-shadow: @arguments;
+	}
+	
+// Box-shadow
+.text-shadow-free(@arguments) {
+	-webkit-text-shadow: @arguments;
+	-moz-text-shadow: @arguments;
+	text-shadow: @arguments;
+	}
+	
+// Transition Duration only
+.transition-duration(@duration: 0.2s) {
+	-moz-transition-duration: @duration;
+	-webkit-transition-duration: @duration;
+	transition-duration: @duration;
+	}
+	
+// Transforms
+.rotation(@deg:5deg){
+	-webkit-transform: rotate(@deg);
+	-moz-transform: rotate(@deg);
+	transform: rotate(@deg);
+	}
+	
+.scale(@ratio:1.5){
+	-webkit-transform:scale(@ratio);
+	-moz-transform:scale(@ratio);
+	transform:scale(@ratio);
+	}
+	
+.transition(@duration:0.2s, @ease:ease-out, @delay:0s) {
+	-webkit-transition: all @duration @ease @delay;
+	-moz-transition: all @duration @ease @delay;
+	transition: all @duration @ease @delay;
+	}
+	
+.transition-attribute(@attribute:all, @duration:0.2s, @ease:ease-out, @delay:0s) {
+	-webkit-transition: @attribute @duration @ease @delay;
+	-moz-transition: @attribute @duration @ease @delay;
+	transition: @attribute @duration @ease @delay;
+	}
+	
+.transition-2(@transition1, @transition2) {
+	-webkit-transition:@transition1, @transition2;
+	-moz-transition:@transition1, @transition2;
+	transition:@transition1, @transition2;
+	}
+	
+.transition-3(@transition1, @transition2, @transition3) {
+	-webkit-transition:@transition1, @transition2, @transition3;
+	-moz-transition:@transition1, @transition2, @transition3;
+	transition:@transition1, @transition2, @transition3;
+	}
+	
+.transition-4(@transition1, @transition2, @transition3, @transition4) {
+	-webkit-transition:@transition1, @transition2, @transition3, @transition4;
+	-moz-transition:@transition1, @transition2, @transition3, @transition4;
+	transition:@transition1, @transition2, @transition3, @transition4;
+	}
+	
+.translate(@x:0, @y:0) {
+	-moz-transform: translate(@x, @y);
+	-webkit-transform: translate(@x, @y);
+	-o-transform: translate(@x, @y);
+	-ms-transform: translate(@x, @y);
+	transform: translate(@x, @y);
+	}
+
+// CSS columns
+.columns(@colwidth: 250px, @colcount: 0, @colgap: 50px, @columnRuleColor: #EEE, @columnRuleStyle: solid, @columnRuleWidth: 1px) {
+  -moz-column-width: @colwidth;
+  -moz-column-count: @colcount;
+  -moz-column-gap: @colgap;
+  -moz-column-rule-color: @columnRuleColor;
+  -moz-column-rule-style: @columnRuleStyle;
+  -moz-column-rule-width: @columnRuleWidth;
+  -webkit-column-width: @colwidth;
+  -webkit-column-count: @colcount;
+  -webkit-column-gap: @colgap;
+  -webkit-column-rule-color: @columnRuleColor;
+  -webkit-column-rule-style: @columnRuleStyle;
+  -webkit-column-rule-width: @columnRuleWidth;
+  column-width: @colwidth;
+  column-count: @colcount;
+  column-gap: @colgap;
+  column-rule-color: @columnRuleColor;
+  column-rule-style: @columnRuleStyle;
+  column-rule-width: @columnRuleWidth;
+}
+
+/*---- End LESS Elements ----*/
+
+/*---- Begin CJDM amends ----*/
+.animation-basic (@name:animation1,@duration:10s,@iterations:infinite,@fill:forwards,@timing:linear) {
+	-moz-animation: @name @duration @iterations @fill @timing;
+	-webkit-animation: @name @duration @iterations @fill @timing;
+	-o-animation: @name @duration @iterations @fill @timing;
+	-ms-animation: @name @duration @iterations @fill @timing;
+	animation: @name @duration @iterations @fill @timing;
+}
+
+.animation (@arguments) {
+	-moz-animation: @arguments;
+	-webkit-animation: @arguments;
+	-o-animation: @arguments;
+	-ms-animation: @arguments;
+	animation: @arguments;
+	/* !Animation properties
+	.animated-object {
+	 animation-name: [the name];
+	 animation-duration: [time in seconds or milliseconds, e.g.4s or 40ms];
+	 animation-iteration-count: [number / infinite];
+	 animation-direction: [normal, alternate];
+	 animation-timing-function: [ease-in,ease-out,linear,ease-in-out, etc.];
+	 animation-fill-mode: [forwards / backwards / both / none];
+	 animation-delay: [time in seconds or milliseconds, e.g.4s or 40ms];
+	} ----*/
+	/* !Animation shorthand: space-deliminated but duration must occur before delay, e.g.
+	animation: test 1s 2s 3 alternate backwards; ----*/
+}
+
+/*---- Flexbox Mixins ----*/
+// Thanks to David de Coninck@CodePen: http://codepen.io/davidgenetic/pen/nLezp
+
+// Example usage
+//#container {
+//	.flexbox();
+//	.left { .flex(2, 7); .order(1); }
+//	.middle { .flex(4, 7); .order(3); }
+//	.right { .flex(1, 7); .order(2); }
+//}
+
+.flexbox(@dir:row, @justifycontent:flex-start) {
+  width:100%;
+  display:-webkit-box;
+  display:-moz-box;
+  display:-ms-flexbox;
+  display: -webkit-flex;
+  display:flex;
+
+  .flexdirection(@dir);
+  .flexjustify(@justifycontent);
+
+  .no-flexboxlegacy & { .clearfix();
+    > * { float:left; }
+  }
+}
+
+.flexdirection(@dir:row) when(@dir = row) {
+  -webkit-box-orient:horizontal;
+  -moz-box-orient:horizontal;
+  -ms-box-orient:horizontal;
+}
+.flexdirection(@dir:row) when(@dir = column) {
+  -webkit-box-orient:vertical;
+  -moz-box-orient:vertical;
+  -ms-box-orient:vertical;
+}
+.flexdirection(@dir) {
+  -webkit-flex-direction:@dir;
+  -ms-flex-direction:@dir;
+  flex-direction:@dir;
+}
+
+.flexjustify(@jc: flex-start) when(@jc = flex-start) {
+  -webkit-box-pack:start;
+  -moz-box-pack:start;
+  -ms-box-pack:start;
+}
+.flexjustify(@jc: flex-start) when(@jc = flex-end) {
+  -webkit-box-pack:end;
+  -moz-box-pack:end;
+  -ms-box-pack:end;
+}
+.flexjustify(@jc: flex-start) when(@jc = space-between) {
+  -webkit-box-pack:justify;
+  -moz-box-pack:justify;
+  -ms-box-pack:justify;
+}
+.flexjustify(@jc) {
+  -webkit-justify-content:@jc;
+  justify-content:@jc;
+}
+
+.flex(@var: 1, @total: 1) {
+  -webkit-box-flex:@var;
+  -moz-box-flex:@var;
+  -webkit-flex:@var;
+  -ms-flex:@var;
+  flex:@var;
+  .no-flexbox & {
+    width: @var/@total*100%;
+  }
+}
+
+.order(@number){
+  -webkit-box-ordinal-group: @number;
+  -moz-box-ordinal-group: @number;
+  -ms-flex-order: @number;
+  -webkit-order: @number;
+  order: @number;
+}

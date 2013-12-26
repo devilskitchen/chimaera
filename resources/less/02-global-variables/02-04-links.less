@@ -1,0 +1,39 @@
+/*==== A:HREF BEHAVIOUR ====*/
+
+// Standard links
+#links {
+	.color (@link-col:@color1) {
+		color:@link-col;
+		text-decoration:none;
+		&:visited {
+			color:darken(@link-col,10%);
+		}
+		&:hover,
+		&:focus {
+			color:lighten(@link-col,10%);
+			text-decoration:none;
+		}
+		&:active {
+			color:lighten(@link-col,15%);
+			text-decoration:underline;
+		}		
+	}
+	.light (@link-alpha:0.5) {
+		color:#FFFFFF;
+		color:rgba(255,255,255,@link-alpha);
+		text-decoration:none;
+		&:visited {
+			color:rgba(255,255,255,@link-alpha);
+			text-decoration:none;
+		}
+		&:hover,
+		&:focus {
+			color:rgba(255,255,255,(@link-alpha + 0.3));
+			text-decoration:none;
+		}
+		&:active {
+			color:rgba(255,255,255,1.0);
+			text-decoration:none;
+		}		
+	}
+}

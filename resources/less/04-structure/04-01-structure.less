@@ -1,0 +1,45 @@
+/*==== MAIN STRUCTURAL FRAMEWORK ====*/
+
+body {
+	font-family:@font1;
+	font-weight:@font-lt;
+	font-size:@base-font-size;
+	//font-size:@responsive-font-size;
+	background:white;
+	@media @mobile {
+		background:@light-grey;
+	}
+	p {
+		margin:@space-em 0;
+	}
+	#links();
+}
+
+
+#container {
+	max-width:@desktop-width;
+	margin:0 auto;
+	background:white;
+	padding-top:84px;
+	overflow-x:hidden;
+	@media @mobile {
+		max-width:@mobile-width;
+		padding-top:0;
+	}
+	@media @tablet {
+		padding-top:0;
+	}
+}
+
+
+// footer
+.main-footer {
+	background:@color1;
+	padding:(@space-px / 2) (@space-px * 2);
+	// p
+	.credits {
+		font-size:10px;
+		color:white;
+		margin:@space-px 0;
+	}
+}

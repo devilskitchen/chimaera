@@ -1,0 +1,31 @@
+/*==== TABLE STYLES ====*/
+
+@table-border-col:@light-grey;
+@th-border-col:@table-border-col;
+@td-border-col:@light-grey;
+
+@th-background-col:@lighter-grey;
+@table-alt-row-col:@lightest-grey;
+
+
+table {
+	width:100%;
+	border:1px solid @table-border-col;
+	thead {
+		th {
+			background:@th-background-col;
+		}
+	}
+	tbody {
+		tr {
+			background:@white;
+			&:nth-child(even) {
+				background:@table-alt-row-col;
+			}
+		}
+		td {
+			border:1px solid @td-border-col;
+		}
+	}
+	// Report pods may have specialised styles
+}

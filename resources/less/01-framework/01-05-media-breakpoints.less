@@ -1,0 +1,81 @@
+/*==== MEDIA QUERIES BREAKPOINTS ====*/
+
+// Breakpoints
+// ---- Source: http://blog.scur.pl/2012/06/variable-media-queries-less-css/
+@highdensity: ~"only screen and (-webkit-min-device-pixel-ratio: 1.5)",
+              ~"only screen and (min--moz-device-pixel-ratio: 1.5)",
+              ~"only screen and (-o-min-device-pixel-ratio: 3/2)",
+              ~"only screen and (min-device-pixel-ratio: 1.5)";
+@mobile:      ~"only screen and (max-width: 529px)";
+@tablet:      ~"only screen and (min-width: 530px) and (max-width: 949px)";
+@desktop:     ~"only screen and (min-width: 950px) and (max-width: 1128px)";
+@desktop-xl:  ~"only screen and (min-width: 1129px)";
+// Added breakpoints: CJDM 21/02/2013
+@tablet-landscape:	~"only screen and (device-width:768px) and (device-height:1024px) and (orientation:landscape)";
+@tablet-portrait: ~"@media only screen and (min-device-width: 768px) and (max-device-width:1024px) and (orientation:portrait)";
+
+/* ---- Example deployment
+
+section {
+    @media @mobile {
+      background: orange;
+    }
+    @media @tablet {
+      background: purple;
+    }
+    @media @desktop {
+      background: green;
+    }
+    @media @desktop-xl {
+      background: blue;
+    }
+    @media @desktop, @desktop-xl {
+      color: black;
+    }
+}
+
+*/
+
+/* !REMEMBER TO COMMENT THIS OUT FOR PRODUCTION! ====*/
+// Tag to enable visualisation of the Media Query break-points: this adds a label in the top-left corner that displays the current media query state.
+
+/*
+body {
+	&:before {
+	    background: red;
+	    color: white;
+	    content: "undefined";
+	    left: 0;
+	    .opacity(80);
+	    padding: .5em 1em;
+	    position: absolute;
+	    text-align: center;
+	    top: 0;
+	    z-index:9999;
+	    @media @mobile {
+	      background: orange;
+	      content: "mobile";
+	    }
+	    @media @tablet {
+	      background: purple;
+	      content: "tablet";
+	    }
+	    @media @desktop {
+	      background: green;
+	      content: "desktop";
+	    }
+	    @media @desktop-xl {
+	      background: blue;
+	      content: "desktop-xl";
+	    }
+	}
+}
+
+.iex {
+	body {
+		&:before {
+			display:none;
+		}
+	}
+}
+*/
