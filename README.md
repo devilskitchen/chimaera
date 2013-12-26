@@ -11,9 +11,9 @@ Well, that's up to you. I just wanted somewhere to put my own constantly re-used
 Why not just use Twitter Bootstrap?
 -----------------------------------
 
-Once again, feel free to do so. Personally, I have deadlines and trying to learn a massive framework, like Boostrap, _effectively_ has taken up more time than I have to spare.
+Once again, feel free to do so. Personally, I have deadlines and trying to learn a massive framework _effectively_ takes up more time than I have to spare.
 
-However, personally, I also feel that Bootstrap is constricting: it's not simply Bootstrap leads to an inclination to build sites that all look similar, it's that Bootstrap itself embraces a number of concepts that I think are wrong for web design.
+However, personally, I also feel that Bootstrap is constricting: it's not simply that Bootstrap leads to an inclination to build sites that all look similar, it's that Bootstrap itself embraces a number of concepts that I think are wrong for web design.
 
 ### The web is not print
 
