@@ -8,18 +8,31 @@ Do we need another framework?
 
 Well, that's up to you. I just wanted somewhere to put my own constantly re-used files, rather than my file system or a rather clunky Subversion respository.
 
-Why not just use Twitter Bootstrap?
+Why not just use _[insert framework of your choice here]_?
 -----------------------------------
 
-Once again, feel free to do so. Personally, I have deadlines and trying to learn a massive framework _effectively_ takes up more time than I have to spare.
+Once again, feel free to do so.
 
-However, personally, I also feel that Bootstrap is constricting: it's not simply that Bootstrap leads to an inclination to build sites that all look similar, it's that Bootstrap itself embraces a number of concepts that I think are wrong for web design.
+Personally, I feel that some frameworks are constricting: it's not simply that they can lead to an inclination to build sites that look similar, it's that some frameworks embrace a number of concepts that I think are wrong for web design.
 
 ### The web is not print
 
 One of the unwelcome design methodologies that print designers have brought to the web is this whole concept of over-riding _columns_, a discipline that is fine when you are actually dealing with multi-column print publications.
 
 The trouble is that this method was designed for just that&mdash;multi-columned print publications _where you have a defined page size_. On the web, you have no defined page size, and talking about fixed columns is just as inappropriate as trying to put stuff _"above the fold"_.
+
+### Media queries are not universal
+
+Some frameworks try to compensate for a lack of fluidity by using <code>@media queries</code> and a large number of break-points. Not only does this increase the workload (since you need to accommodate multiple view states) but it also runs into problems with older browsers.
+
+I come from a background of designing for large corporate, governmental and quasi-governmental organisations&mdash;many of whom are, alas, still using IE7 (and some still use IE6). Even where upgrades are happening, many of these organisations are only upgrading to IE8 (where XP is often the limiting factor).
+
+For all that <code>respond.js</code>, and similar polyfills, do a good job of trying to backfill capabilities, we just have to accept that many of our customers are not going to get the best experience at work.
+
+And whilst we would all love to imagine that everyone at least uses a better browser at home, I can tell you&mdash;from first-hand experience&mdash;that this is simply not the case.
+
+### Design in a fluid way from the start
+
 
 The web is a fluid medium, with many different ways of viewing websites and web applications: dealing in fixed units just doesn't make any sense. And I include, by the way, pixel measurements in this.
 
